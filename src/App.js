@@ -21,7 +21,7 @@ function App() {
     <div className="App">
         <h1>Gestion de Projet</h1>
         <Routes>
-          <Route path='/' element={<Works/>}/>
+          <Route path='/' element={<Works taches={taches}/>}/>
         </Routes>
         
       
