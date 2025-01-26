@@ -3,6 +3,7 @@ import './App.css';
 import { useState,useEffect } from 'react';
 import { Route,Routes,Link } from 'react-router-dom';
 import Works from './components/Works';
+import Ajout from './components/Ajout';
 function App() {
   const [taches,setTaches]=useState([]);
   useEffect(()=>{
@@ -17,11 +18,13 @@ function App() {
       console.log(e)
     })
   },[])
+  
   return (
     <div className="App">
         <h1>Gestion de Projet</h1>
         <Routes>
-          <Route path='/' element={<Works taches={taches}/>}/>
+          <Route path='/' element={<Works taches={taches} />}/>
+          <Route path='/ajouter' element={<Ajout taches={taches} setTaches={setTaches} />}/>
         </Routes>
         
       
