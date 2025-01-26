@@ -5,6 +5,7 @@ import { Route,Routes,Link } from 'react-router-dom';
 import Works from './components/Works';
 import Ajout from './components/Ajout';
 import Affichage from './components/Affichage';
+import Modification from './components/Modification';
 function App() {
   const [taches,setTaches]=useState([]);
   useEffect(()=>{
@@ -24,9 +25,10 @@ function App() {
     <div className="App">
         <h1>Gestion de Projet</h1>
         <Routes>
-          <Route path='/' element={<Works taches={taches} />}/>
+          <Route path='/' element={<Works taches={taches} setTaches={setTaches}  />}/>
           <Route path='/ajouter' element={<Ajout taches={taches} setTaches={setTaches} />}/>
           <Route path='/affichage' element={<Affichage  />}/>
+          <Route path='/modification' element={<Modification  taches={taches} setTaches={setTaches} />}/>
         </Routes>
         
       

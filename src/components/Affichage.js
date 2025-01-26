@@ -5,7 +5,6 @@ export default function Affichage(){
     const title=localStorage.getItem('title')
     const completed=localStorage.getItem('completed')
     const userId=localStorage.getItem('userId')
-    console.log(id,title,completed,userId)
     
     return (
         <div className="container card">
