@@ -1,17 +1,26 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+import Ajout from "./Ajout"
+import Affichage from "./Affichage"
 
 export default function Works({taches}){
 
-    const [user,setUser]=useState(null)
+    const handleShow=(t)=>{
+        localStorage.setItem('id',t.id)
+        localStorage.setItem('title',t.title)
+        localStorage.setItem('completed',t.completed)
+        localStorage.setItem('userId',t.userId)
+    }
    
     const Alltaches=taches.map((t)=>{
-        return <tr>
+        return <tr key={t.id}>
                    <td>{t.id}</td>
-                   <td>{t.title}</td>
+                   <td>{t.title} </td>
                    <td >{t.completed?"true":"false"}</td>
                    <td>
-                     <button class='btn btn-info btn-sm'>afficher</button>
+                    <Link to='/affichage'>
+                     <button onClick={()=>{handleShow(t)}} class='btn btn-info btn-sm'>afficher</button>
+                     </Link>
                       <button class='btn btn-success btn-sm'>modifier</button>
                        <button class='btn btn-danger btn-sm'>supprimer</button>
                    </td>

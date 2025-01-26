@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 import { Route,Routes,Link } from 'react-router-dom';
 import Works from './components/Works';
 import Ajout from './components/Ajout';
+import Affichage from './components/Affichage';
 function App() {
   const [taches,setTaches]=useState([]);
   useEffect(()=>{
@@ -25,6 +26,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Works taches={taches} />}/>
           <Route path='/ajouter' element={<Ajout taches={taches} setTaches={setTaches} />}/>
+          <Route path='/affichage' element={<Affichage  />}/>
         </Routes>
         
       
